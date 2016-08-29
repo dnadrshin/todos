@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	h1 Tasks
+	ul
+		each task in tasks
+			li= task.task
+
+
+	form(name="add-todo", method="post" action="/todo/new/")
+		div.input
+			span.label Task
+			input(type="text", name="title")
+		div.actions
+			input(type="submit", value="add")
